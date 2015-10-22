@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>Lightbox</title>
+    <link href="http://fonts.googleapis.com/css?family=Lato:200,100,400" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <script type="text/javascript">
+    
+    function ready(fn) {
+      if (document.readyState != 'loading'){
+        fn();
+      } else {
+        document.addEventListener('DOMContentLoaded', fn);
+      }
+    }
+
+    ready(function(){
+        
+      $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
+      
+      {
+          tags: "earth",
+          tagmode: "any",
+          format: "json"
+      },
+      
+      function(data) {
+          var random = Math.floor(Math.random() * data.items.length);
+          var image_src = data.items[random]['media']['m'].replace("_m", "_b");
+          document.getElementById('title').innerHTML = data.items[random].title;
+          document.getElementById('thumbnail').src = image_src;
+          document.getElementById('popout').src = image_src;
+      });
+
+    });
+
+    </script>
+    <!-- Lightbox usage markup -->
+    <h1>Slack Lightbox</h1>
+    <p>Click the thumbnail to activate the lightbox</p>
+
+    <!-- thumbnail image wrapped in a link -->
+    <a href="#img1">
+      <img id="thumbnail">
+    </a>
+
+    <!-- lightbox container hidden with CSS -->
+    <a href="#" class="lightbox" id="img1">
+      <img id="popout">
+      <p id="title">
+    </a>
+
+    <p class="italic small">Image credit: Flickr API</p>
+  </body>
+</html
