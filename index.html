@@ -6,22 +6,25 @@
     <link rel="stylesheet" href="main.css">
   </head>
   <body>
-    <script src="app.js" type="text/javascript"></script>
-    <!-- Lightbox usage markup -->
     <h1>Slack Lightbox</h1>
     <p>Click the thumbnail to activate the lightbox</p>
 
-    <!-- thumbnail image wrapped in a link -->
-    <a href="#img1">
-      <img id="thumbnail">
-    </a>
+    <a href="#img1"><img id="thumbnail"></a>
+    <a href="#" class="lightbox" id="img1"><img id="popout"></a>
+    
+    <p id="title">
 
-    <!-- lightbox container hidden with CSS -->
-    <a href="#" class="lightbox" id="img1">
-      <img id="popout">
-      <p id="title">
-    </a>
 
     <p class="italic small">Image credit: Flickr API</p>
+    
+
+    <section class="border">
+        <!-- <button>Button</button> -->
+      <button id="previous">PREVIOUS</button>
+      <button id="next">NEXT</button>
+    </section>
+    
+
+    <script src="app.js" type="text/javascript"></script>
   </body>
 </html

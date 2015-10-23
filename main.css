@@ -19,21 +19,47 @@ p {
   font-weight: 200;
 }
 
+button {
+  margin: 20px;
+  font-size: 1.3em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  font-weight: lighter;
+}
+
+#next {
+  padding-left: 70px;
+  padding-right: 70px; 
+}
+
+section.border button {
+  color: #B4C0CC;
+  background: rgba(0,0,0,0);
+  border: solid 2px #B4C0CC ;
+}
+section.border button:hover,
+section.border button.hover {
+  border-color: #E0EFFF;
+  color: #E0EFFF;
+}
+section.border button:active,
+section.border button.active {
+  border-color: #E0EFFF;
+  color: #E0EFFF;
+}
+
 .italic { font-style: italic; }
 .small { font-size: 0.8em; }
 
-/** LIGHTBOX MARKUP **/
-
 #thumbnail {
-  max-width: 300px;
+  max-width: 500px;
   max-height: auto;
 }
 
 .lightbox {
-  /** Default lightbox to hidden */
   display: none;
-
-  /** Position and style */
   position: fixed;
   z-index: 999;
   width: 100%;
@@ -41,20 +67,16 @@ p {
   text-align: center;
   top: 0;
   left: 0;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.65);
 }
 
 .lightbox img {
-  /** Pad the lightbox image */
   max-width: 90%;
   max-height: 80%;
   margin-top: 2%;
 }
 
 .lightbox:target {
-  /** Remove default browser outline */
   outline: none;
-
-  /** Unhide lightbox **/
   display: block;
 }
