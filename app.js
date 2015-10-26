@@ -11,11 +11,10 @@ var flickrData = null;
 var photoIndex = 0;
 
 function setPhoto(data, photoIndex) {
-  console.log('data from "setPhoto":', data)
   data = data[photoIndex];  
   thumbnail.src = createSourceUrl(data.farm, data.server, data.id, data.secret);
   title.innerHTML = data.title !== '' ? data.title + ':' : '(no title)';
-  popout.src = thumbnail.src.replace("_z", "_b");
+  popout.src = thumbnail.src.replace("_z", "_b"); // changing from medium to large source
 };
 
 domReady(function() {
