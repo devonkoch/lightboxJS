@@ -22,8 +22,6 @@ function setPhoto(data, photoIndex) {
 
 domReady(function() {
 
-  console.log('wtf');
-
   form.onsubmit = function() {
     
     buttons.style.display = "block";
@@ -32,7 +30,6 @@ domReady(function() {
     var input = document.getElementById('username').value;
     
     getUserPhotos(input, function(data) {
-      console.log(data);
       setPhoto(data, photoIndex); // setting first photo
       flickrData = data;
     });

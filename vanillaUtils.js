@@ -1,4 +1,7 @@
 function domReady(fn) {
+
+  window.location = '#';
+
   if (document.readyState !== 'loading'){
     fn();
   } else {
@@ -62,12 +65,9 @@ function createSourceUrl(farmId, serverId, id, secret, size) {
 };
 
 function getUserPhotos(name, callback) {
-  console.log('here');
   RESTfullyGet(createUsernameUrl(name), function(response) {
-    console.log('here');
     response = JSON.parse(response);
     RESTfullyGet(createPublicPhotoUrl(response.user.id), function(response) {
-      console.log('here');
       response = JSON.parse(response);
       callback(response.photos.photo);
     });
