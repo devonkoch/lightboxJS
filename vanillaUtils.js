@@ -1,6 +1,6 @@
 function domReady(fn) {
 
-  window.location = '#';
+  window.location = '?#';
 
   if (document.readyState !== 'loading'){
     fn();
