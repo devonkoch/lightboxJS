@@ -45,8 +45,8 @@ function RESTfullyGet(url, callback) {
   request.send();
 };
 
-var apiKey = '&api_key=e3b60e6e06b54bce8d40a791b3594344';
 var baseUrl = 'https://api.flickr.com/services/rest/?method=';
+var apiKey = '&api_key=e3b60e6e06b54bce8d40a791b3594344';
 var jsonConvert = '&format=json&nojsoncallback=1';
 
 function createUsernameUrl(username) {
@@ -62,9 +62,12 @@ function createSourceUrl(farmId, serverId, id, secret, size) {
 };
 
 function getUserPhotos(name, callback) {
+  console.log('here');
   RESTfullyGet(createUsernameUrl(name), function(response) {
+    console.log('here');
     response = JSON.parse(response);
     RESTfullyGet(createPublicPhotoUrl(response.user.id), function(response) {
+      console.log('here');
       response = JSON.parse(response);
       callback(response.photos.photo);
     });

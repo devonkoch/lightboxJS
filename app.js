@@ -1,7 +1,10 @@
+var elements = {
+  // todo  
+};
+
 var title      = document.getElementById('title');
 var thumbnail  = document.getElementById('thumbnail');
 var popout     = document.getElementById('popout');
-var input      = document.getElementById('username');
 var form       = document.getElementsByTagName('form')[0];
 var buttons    = document.getElementsByTagName('section')[0];
 var prevButton = document.getElementById('previous');
@@ -19,13 +22,21 @@ function setPhoto(data, photoIndex) {
 
 domReady(function() {
 
-  form.onsubmit = function(){
-    console.log('submitted');
+  console.log('wtf');
+
+  form.onsubmit = function() {
+    
     buttons.style.display = "block";
-    getUserPhotos(input.value, function(data) {
-      setPhoto(data, 0) // setting first photo
+    
+    photoIndex = 0;
+    var input = document.getElementById('username').value;
+    
+    getUserPhotos(input, function(data) {
+      console.log(data);
+      setPhoto(data, photoIndex); // setting first photo
       flickrData = data;
     });
+
   };
 
   nextButton.onclick = function() {
@@ -39,7 +50,7 @@ domReady(function() {
 
   prevButton.onclick = function() {
     if(photoIndex < 1) {
-      alert('this is the first image in the set!')
+      alert('this is the first image in the set!');
     } else {
       photoIndex -= 1;
       setPhoto(flickrData, photoIndex);
