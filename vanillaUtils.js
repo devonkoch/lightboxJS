@@ -67,6 +67,7 @@ function createSourceUrl(farmId, serverId, id, secret, size) {
 function getUserPhotos(name, callback) {
   RESTfullyGet(createUsernameUrl(name), function(response) {
     response = JSON.parse(response);
+    console.dir(response);
     RESTfullyGet(createPublicPhotoUrl(response.user.id), function(response) {
       response = JSON.parse(response);
       callback(response.photos.photo);
