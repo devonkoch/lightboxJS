@@ -2,21 +2,20 @@ html,body {
   font-family: 'Lato', sans-serif;
   padding: 0 2em;
   font-size: 18px;
-  background: #222;
-  color: #aaa;
+  background: #FFFFFF;
+  color: black;
   text-align:center;
 }
 
 h1 {
   font-size: 3em;
-  font-weight: 200;
+  font-weight: lighter;
   margin: 0.5em 0 0.2em 0;
 }
 
 p {
   margin: 1.5em 0;
-  color: #888;
-  font-weight: 200;
+  color: black;
 }
 
 button {
@@ -26,7 +25,8 @@ button {
   padding-bottom: 10px;
   padding-left: 50px;
   padding-right: 50px;
-  font-weight: lighter;
+  font-weight: 200;
+  cursor: pointer;
 }
 
 #next {
@@ -34,28 +34,37 @@ button {
   padding-right: 70px; 
 }
 
+section {
+  display: none;
+}
+
 section.border button {
-  color: #B4C0CC;
+  color: #3EB991;
   background: rgba(0,0,0,0);
-  border: solid 2px #B4C0CC ;
+  border: solid 2px #3EB991;
+  border-radius: 5px;
 }
 section.border button:hover,
 section.border button.hover {
-  border-color: #E0EFFF;
-  color: #E0EFFF;
+  border-color: #E01563;
+  color: #E01563;
 }
 section.border button:active,
 section.border button.active {
-  border-color: #E0EFFF;
-  color: #E0EFFF;
+  border-color: #E01563;
+  color: #E01563;
 }
 
 .italic { font-style: italic; }
-.small { font-size: 0.8em; }
+.small  { font-size: 0.8em;   }
 
 #thumbnail {
-  max-width: 500px;
-  max-height: auto;
+  max-height: 640px;
+  /*max-height: auto;*/
+}
+
+.hide {
+  display: none;
 }
 
 .lightbox {
@@ -67,16 +76,77 @@ section.border button.active {
   text-align: center;
   top: 0;
   left: 0;
-  background: rgba(0,0,0,0.65);
+  background: rgba(0,0,0,0.5);
 }
 
 .lightbox img {
-  max-width: 90%;
-  max-height: 80%;
-  margin-top: 2%;
+  max-height: 90%;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .lightbox:target {
   outline: none;
   display: block;
+}
+
+.box {
+  margin: 0 auto;
+  width: 400;
+  height:200;
+}
+
+input[type="text"] {
+  appearance: none;
+  width:380px;
+  height:70px;
+  font-size:1.5em;
+  font-weight: lighter;
+  background:transparent;
+  border:none;
+  border-bottom: solid 3px #3EB991;
+  text-align:center;
+  transition: border-color 0.6s ease;
+}
+
+::-webkit-input-placeholder {
+   color: #464c4c;
+   transition: color 0.3s ease;
+}
+
+:focus::-webkit-input-placeholder {
+   color: transparent;
+   transition: color 0.3s ease;
+}
+
+input[type="text"]:focus {
+  outline:none;
+  border:none;
+  border-bottom: solid 3px #E01563;
+  transition: border-color 1s ease;
+}
+
+input[type="submit"] {
+  appearance: none;
+  width:300px;
+  height:75px;
+  font-size:1.05em;
+  background:transparent;
+  color: #E9A820;
+  border:none;
+  text-align:center;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  transition: color 0.75s ease;
+  outline:none;
+}
+
+input[type="submit"]:hover {
+  color: #6ECADC;
+  cursor:pointer;
+  transition: color 0.5s ease;
+} 
+
+footer {
+  margin: 150px;
 }

@@ -1,40 +1,36 @@
-function ready(fn) {
-  if (document.readyState != 'loading'){
-    fn();
-  } else {
-    document.addEventListener('DOMContentLoaded', fn);
-  }
-}
+var title      = document.getElementById('title');
+var thumbnail  = document.getElementById('thumbnail');
+var popout     = document.getElementById('popout');
+var input      = document.getElementById('username');
+var form       = document.getElementsByTagName('form')[0];
+var buttons    = document.getElementsByTagName('section')[0];
+var prevButton = document.getElementById('previous');
+var nextButton = document.getElementById('next');
 
-var flickrData;
+var flickrData = null;
 var photoIndex = 0;
 
-var setPhoto = function(data, photoIndex) {
-  var imgUrl = data.items[photoIndex]['media']['m'].replace("_m", "_b");
-  document.getElementById('title').innerHTML = data.items[photoIndex].title;
-  document.getElementById('thumbnail').src = imgUrl;
-  document.getElementById('popout').src = imgUrl;
-}
+function setPhoto(data, photoIndex) {
+  console.log('data from "setPhoto":', data)
+  data = data[photoIndex];  
+  thumbnail.src = createSourceUrl(data.farm, data.server, data.id, data.secret);
+  title.innerHTML = data.title !== '' ? data.title + ':' : '(no title)';
+  popout.src = thumbnail.src.replace("_z", "_b");
+};
 
-ready(function(){
-  $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
-  
-  {
-      tags: "cats",
-      tagmode: "any",
-      format: "json"
-  },
+domReady(function() {
 
-  function(data) {
-    setPhoto(data, photoIndex)
-    flickrData = data;
-  });
-
-  var prevButton = document.getElementById('previous')
-  var nextButton = document.getElementById('next')
+  form.onsubmit = function(){
+    console.log('submitted');
+    buttons.style.display = "block";
+    getUserPhotos(input.value, function(data) {
+      setPhoto(data, 0) // setting first photo
+      flickrData = data;
+    });
+  };
 
   nextButton.onclick = function() {
-    if(photoIndex >= flickrData.items.length) {
+    if(photoIndex >= flickrData.length) {
       alert('this is the last image in the set!')
     } else {
       photoIndex += 1;
@@ -50,6 +46,5 @@ ready(function(){
       setPhoto(flickrData, photoIndex);
     }
   };
-
 
 });
