@@ -79,7 +79,6 @@ function createSourceUrl(farmId, serverId, id, secret, size) {
 
 function getUserPhotos(name, callback) {
   RESTfullyGet(createUsernameUrl(name), function(response) {
-    console.dir(response);
     var id = xmlToJson(response.responseXML).rsp.user['@attributes'].id;
     RESTfullyGet(createPublicPhotoUrl(id), function(response) {
       var response = xmlToJson(response.responseXML).rsp.photos.photo;
