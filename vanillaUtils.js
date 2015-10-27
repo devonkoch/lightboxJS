@@ -46,7 +46,6 @@ function RESTfullyGet(url, callback) {
   };
 
   request.open("GET", url, true);
-  request.setRequestHeader('Access-Control-Allow-Origin', '*');
   request.send();
 };
 

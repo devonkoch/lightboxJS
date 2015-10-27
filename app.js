@@ -1,12 +1,7 @@
-var elements = {
-  // todo  
-};
-
 var title      = document.getElementById('title');
 var thumbnail  = document.getElementById('thumbnail');
 var popout     = document.getElementById('popout');
 var submit     = document.getElementById('submit');
-// var form       = document.getElementsByTagName('form')[0];
 var buttons    = document.getElementsByTagName('section')[0];
 var prevButton = document.getElementById('previous');
 var nextButton = document.getElementById('next');
