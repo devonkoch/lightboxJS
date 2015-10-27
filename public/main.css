@@ -18,11 +18,6 @@ p {
   color: black;
 }
 
-span {
-  font-weight: bold;
-  letter-spacing: 3px;
-}
-
 button {
   margin: 20px;
   font-size: 1.3em;
@@ -165,4 +160,38 @@ input[type="text"]:focus {
 
 footer {
   margin: 150px;
+}
+
+@keyframes colorEase {
+  0%   { color : #6ECADC; }
+  25%  { color : #E9A820; }
+  50%  { color : #3EB991; }
+  75%  { color : #E01563; }
+  100% { color : #6ECADC; }
+}
+
+@-webkit-keyframes colorEase {
+  0%   { color : #6ECADC; }
+  25%  { color : #E9A820; }
+  50%  { color : #3EB991; }
+  75%  { color : #E01563; }
+  100% { color : #6ECADC; }
+}
+
+span {
+  font-weight: bold;
+  font-style: Frutiger;
+}
+
+#flick {
+  color: #0062DD;
+}
+
+#r {
+  color: #FF0084;
+}
+
+#slack {
+  font-size: 1.2em;
+  animation: colorEase 4s ease-in-out infinite;
 }

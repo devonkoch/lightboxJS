@@ -1,5 +1,4 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -8,12 +7,12 @@
     <link rel="stylesheet" href="main.css">
   </head>
   <body>
-    <h1>Flickr Lightbox for <span>S</span><span>L</span><span>A</span><span>C</span><span>K</span></h1>
+    <h1><span id="flick">Flick</span><span id="r">r</span> Lightbox for <span id="slack">slack</span></h1>
     <p>Please enter your favorite Flickr username!</p>
 
     <form class="box">
       <input id="username" type="text" placeholder="e.g. 'stewart'"></input>
-      <button id="submit" value="submit">submit</button>
+      <button id="submit">submit</button>
     </form>
     
     <section class="border">
@@ -28,7 +27,7 @@
 
     <footer></footer>
 
-    <script src="vanillaUtils.js" type="text/javascript"></script>
+    <script src="js/vanillaUtils.js" type="text/javascript"></script>
     <script src="app.js" type="text/javascript"></script>
   </body>
 </html>
