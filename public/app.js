@@ -17,18 +17,7 @@ function setPhoto(data, photoIndex) {
   popout.src = thumbnail.src.replace("_z", "_b"); // changing from medium to large source
 };
 
-var blinky = function() {
-  var colors = ['6ECADC', 'E9A820', 'E01563', '3EB991'];
-  Array.prototype.forEach.call(letters, function(el, i){
-    el.style.color = colors[Math.floor(Math.random() * colors.length)];
-  });
-};
-
 domReady(function() {
-
-  blinky();
-
-  setInterval(blinky, 250);
 
   submit.onclick = function() {
 
