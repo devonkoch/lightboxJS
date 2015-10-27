@@ -131,7 +131,7 @@ input[type="text"]:focus {
   transition: border-color 1s ease;
 }
 
-input[type="submit"] {
+#submit {
   appearance: none;
   width:300px;
   height:75px;
@@ -142,11 +142,11 @@ input[type="submit"] {
   text-align:center;
   letter-spacing:0.15em;
   text-transform:uppercase;
-  transition: color 0.75s ease;
   outline:none;
+  transition: color 0.75s ease;
 }
 
-input[type="submit"]:hover {
+#submit:hover {
   color: #6ECADC;
   cursor:pointer;
   transition: color 0.5s ease;
