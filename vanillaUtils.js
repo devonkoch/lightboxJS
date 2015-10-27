@@ -30,6 +30,7 @@ function RESTfullyGet(url, callback) {
   };
 
   var request = createRequest();
+
   // Create the callback:
   request.onreadystatechange = function() {
     if (request.readyState !== 4) {
@@ -45,8 +46,10 @@ function RESTfullyGet(url, callback) {
   };
 
   request.open("GET", url, true);
+  request.setRequestHeader('Access-Control-Allow-Origin', '*');
   request.send();
 };
+
 
 var baseUrl = 'https://api.flickr.com/services/rest/?method=';
 var apiKey = '&api_key=e3b60e6e06b54bce8d40a791b3594344';
