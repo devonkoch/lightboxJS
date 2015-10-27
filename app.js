@@ -10,7 +10,7 @@ var flickrData = null;
 var photoIndex = 0;
 
 function setPhoto(data, photoIndex) {
-  data = data[photoIndex];  
+  data = data[photoIndex]['@attributes'];
   thumbnail.src = createSourceUrl(data.farm, data.server, data.id, data.secret);
   title.innerHTML = data.title !== '' ? data.title + ':' : '(no title)';
   popout.src = thumbnail.src.replace("_z", "_b"); // changing from medium to large source
@@ -25,7 +25,7 @@ function blinky() {
 };
 
 domReady(function() {
-  setInterval(blinky, 250);
+  setInterval(blinky, 300);
 
   submit.onclick = function() {
 
@@ -34,9 +34,9 @@ domReady(function() {
     photoIndex = 0;
     var input = document.getElementById('username').value;
     
-    getUserPhotos(input, function(data) {
-      setPhoto(data, photoIndex); // setting first photo
-      flickrData = data;
+    getUserPhotos(input, function(response) {
+      setPhoto(response, photoIndex); // setting first photo
+      flickrData = response;
     });
 
   };

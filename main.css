@@ -102,7 +102,9 @@ section.border button.active {
 }
 
 input[type="text"] {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   width:380px;
   height:70px;
   font-size:1.5em;
@@ -111,28 +113,34 @@ input[type="text"] {
   border:none;
   border-bottom: solid 3px #3EB991;
   text-align:center;
-  transition: border-color 0.6s ease;
+  -webkit-transition: border-color 0.6s ease;
+          transition: border-color 0.6s ease;
 }
 
 ::-webkit-input-placeholder {
    color: #464c4c;
-   transition: color 0.3s ease;
+   -webkit-transition: color 0.3s ease;
+           transition: color 0.3s ease;
 }
 
 :focus::-webkit-input-placeholder {
    color: transparent;
-   transition: color 0.3s ease;
+   -webkit-transition: color 0.3s ease;
+           transition: color 0.3s ease;
 }
 
 input[type="text"]:focus {
   outline:none;
   border:none;
   border-bottom: solid 3px #E01563;
-  transition: border-color 1s ease;
+  -webkit-transition: border-color 1s ease;
+          transition: border-color 1s ease;
 }
 
 #submit {
   appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   width:300px;
   height:75px;
   font-size:1.05em;
@@ -142,6 +150,8 @@ input[type="text"]:focus {
   text-align:center;
   letter-spacing:0.15em;
   text-transform:uppercase;
+  -webkit-transition: color 0.75s ease;
+          transition: color 0.75s ease;
   outline:none;
   transition: color 0.75s ease;
 }
@@ -149,7 +159,8 @@ input[type="text"]:focus {
 #submit:hover {
   color: #6ECADC;
   cursor:pointer;
-  transition: color 0.5s ease;
+  -webkit-transition: color 0.5s ease;
+          transition: color 0.5s ease;
 } 
 
 footer {
