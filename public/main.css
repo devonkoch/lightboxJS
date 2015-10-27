@@ -162,6 +162,10 @@ footer {
   margin: 150px;
 }
 
+#super {
+  color: blue;
+}
+
 @keyframes colorEase {
   0%   { color : #6ECADC; }
   25%  { color : #E9A820; }
