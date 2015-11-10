@@ -1,5 +1,5 @@
 (function(){
-  var letters    = document.querySelectorAll('span');
+  var letters    = document.getElementsByTagName('span');
   var title      = document.getElementById('title');
   var thumbnail  = document.getElementById('thumbnail');
   var popout     = document.getElementById('popout');
